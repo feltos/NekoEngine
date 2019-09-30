@@ -50,7 +50,7 @@ float Vec2f::GetMagnitude() const
     return sqrtf(x * x + y * y);
 }
 
-Vec2f Vec2f::Normalized()
+Vec2f Vec2f::Normalized() const
 {
     return (*this) / (*this).GetMagnitude();
 }
@@ -110,9 +110,11 @@ Vec2f Vec2f::Lerp(const Vec2f& v1, const Vec2f& v2, float t)
 
 float Vec2f::AngleBetween(const Vec2f& v1, const Vec2f& v2)
 {
-	const float dot = Dot(v1, v2);
-    const float angle = acosf(dot) / float(M_PI) * 180.0f;
-    return (dot < 0.0f ? -1.0f : 1.0f) * angle;
+	const float dot = Dot(v1, v2) / v1.GetMagnitude() / v2.GetMagnitude();
+	
+	const float det = v1.x * v2.y - v1.y * v2.x;
+	const float angle = atan2(det, dot) / float(M_PI) * 180.0f;
+    return angle;
 }
 
 float Vec2f::Dot(const Vec2f& v1, const Vec2f& v2)
@@ -132,5 +134,12 @@ Vec2f Vec2f::Rotate(float angle) const
     float radianAngle = glm::radians(angle);
     return Vec2f(cosf(radianAngle) * x - sinf(radianAngle) * y,
                  sinf(radianAngle) * x + cosf(radianAngle) * y);
+}
+
+Vec2f& Vec2f::operator/=(float rhs)
+{
+    this->x /= rhs;
+    this->y /= rhs;
+    return *this;
 }
 }

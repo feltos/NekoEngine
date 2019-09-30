@@ -35,7 +35,7 @@ public:
 
     void ParseEntityJson(json& entityJson) override;
     void ParseComponentJson(json& componentJson, neko::Entity entity) override;
-
+	void ParseSceneJson(json& sceneJson) override;
 
     virtual json SerializeComponent(neko::Entity entity, neko::NekoComponentType componentType);
     virtual json SerializeEntity(neko::Entity entity);
@@ -46,6 +46,7 @@ public:
     void SaveCurrentScene();
     void LoadScene(std::string_view path);
 
+    const std::string_view GetSceneTmpPath();
 protected:
 
     void SaveScene(std::string_view path);

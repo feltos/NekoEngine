@@ -431,10 +431,11 @@ void NekoEditor::SwitchEditorMode(EditorMode editorMode)
             }
             else
             {
-                auto rootEntity = entityManager_.CreateEntity();
+	            const auto rootEntity = entityManager_.CreateEntity();
                 auto& entitiesName = sceneManager_.GetCurrentScene().entitiesNames;
                 ResizeIfNecessary(entitiesName, rootEntity, std::string());
                 entitiesName[rootEntity] = "Root Entity";
+
             }
             break;
         }
