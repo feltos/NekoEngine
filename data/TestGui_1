@@ -1,0 +1,80 @@
+{
+    "entities": [
+        {
+            "components": [
+                {
+                    "component": 2,
+                    "position": [
+                        -3.0,
+                        -2.0
+                    ]
+                },
+                {
+                    "component": 4,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "angle": 0.0,
+                    "component": 8
+                },
+                {
+                    "component": 128,
+                    "layer": -10,
+                    "origin": [
+                        0.0,
+                        0.0
+                    ],
+                    "texture": "data/sprites/bg/bg.png"
+                }
+            ],
+            "entity": 0,
+            "name": "Background",
+            "parent": -1
+        },
+        {
+            "components": [
+                {
+                    "component": 2,
+                    "position": [
+                        6.0,
+                        7.0
+                    ]
+                },
+                {
+                    "component": 4,
+                    "scale": [
+                        2.0,
+                        1.0
+                    ]
+                },
+                {
+                    "angle": 0.0,
+                    "component": 8
+                },
+                {
+                    "component": 128,
+                    "layer": 0,
+                    "origin": [
+                        0.0,
+                        0.0
+                    ],
+                    "texture": "data/sprites/platform.jpg"
+                }
+            ],
+            "entity": 1,
+            "name": "Ground",
+            "parent": -1
+        },
+        {
+            "components": [],
+            "entity": 2,
+            "name": "Player",
+            "parent": -1
+        }
+    ],
+    "sceneName": "New Scene",
+    "scenePath": "D:\\NekoEngine\\data\\TestGui_1"
+}
